@@ -16,8 +16,16 @@ namespace introduccion.Controllers
             return RedirectToAction("Buscar", "Empleado");
         }
         [OutputCache(Duration = 20)]
+        [ActionName("Tiempo")]
         public string GetHora() {
-            return DateTime.Now.ToString("T");
+            return ObtenerTiempo().ToString("T");
+        }
+        [NonAction]
+        public DateTime ObtenerTiempo() {//Este es un método (que no retorna una vista)
+            return DateTime.Now;
+        }
+        public ActionResult MiView() {
+            return View();
         }
     }
 }

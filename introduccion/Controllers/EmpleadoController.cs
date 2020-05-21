@@ -17,5 +17,9 @@ namespace introduccion.Controllers
         public ActionResult Buscar(string nombre) {
             return Content("El texto es: "+nombre);
         }
+        [HttpGet]
+        public ActionResult Buscar() {//Uso de los action verbs
+            return Content("Este Action ahora es el llamado cuando se lo referencia por GET.");
+        }
     }
 }
